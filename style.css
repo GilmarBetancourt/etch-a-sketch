@@ -1,0 +1,10 @@
+.grid {
+  border: 1px solid grey;
+}
+
+.container {
+  display: grid;
+  width: 350px;
+  height: 350px;
+  border: 1px solid grey;
+}
