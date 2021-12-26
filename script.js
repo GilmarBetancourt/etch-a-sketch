@@ -2,10 +2,12 @@
 const container = document.getElementById("container");
 let fullGrid = false;
 let randomColor = false;
+let color = false;
 let erase = false;
 let black = false;
+let colorPicked = "";
 
-document.getElementById("start").addEventListener("click", () => {
+document.getElementById("startButton").addEventListener("click", () => {
   if (fullGrid == true) {
     deleteGrid();
   }
@@ -49,6 +51,8 @@ function changeSquaresColor() {
         //This generates a random color in hex
         let randomColorCode = Math.floor(Math.random() * 16777215).toString(16);
         item.style.backgroundColor = `#${randomColorCode}`;
+      } else if (color == true) {
+        item.style.backgroundColor = `${colorPicked}`;
       }
     });
   });
@@ -73,6 +77,14 @@ document.querySelectorAll(".roundButtons").forEach((item) => {
       black = false;
       erase = false;
       console.log(randomColor);
+    } else if (item.id == "color") {
+      item.addEventListener("change", () => {
+        color = true;
+        randomColor = false;
+        black = false;
+        erase = false;
+        colorPicked = item.value;
+      });
     } else if (item.id == "erase") {
       erase = true;
       randomColor = false;

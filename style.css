@@ -1,3 +1,26 @@
+body {
+  background-color: #85c4ff;
+  font-family: "Salsa", cursive;
+}
+
+h1 {
+  color: #e18d35;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-text-stroke: 0.5px grey;
+  font-size: 2.6rem;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  transform: translate(2%);
+}
+
+button {
+  display: block;
+}
+
 .gridItem {
   border: 1px solid lightgray;
 }
@@ -7,4 +30,66 @@
   width: 350px;
   height: 350px;
   border: 1px solid grey;
+  background-color: white;
+}
+
+.sideMenu {
+  margin-right: 2%;
+}
+
+#color {
+  color: red;
+  border-style: none;
+  padding: 15%;
+  background-color: red;
+}
+
+.roundButtons,
+#startButton {
+  border-radius: 50%;
+  height: 4rem;
+  width: 4rem;
+  border: none;
+  margin-bottom: 10%;
+}
+
+#clearBoard {
+  background-color: white;
+  color: #0c5794;
+}
+
+#black {
+  background-color: black;
+  color: #0c5794;
+  -webkit-text-stroke: 0.5px grey;
+}
+
+#erase {
+  background-color: lightgray;
+  color: #0c5794;
+}
+
+#randomColor {
+  background-image: url(Images/rainbowcircle2.jpeg);
+  background-size: cover;
+  color: #0c5794;
+}
+
+#start {
+  color: #e18d35;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-text-stroke: 0.5px grey;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 0%;
+}
+
+#startButton {
+  background-image: url(/Images/startbutton.png);
+  background-size: cover;
+}
+
+.startItems {
+  padding-top: 10%;
+  padding-left: 5%;
 }
