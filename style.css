@@ -1,3 +1,7 @@
+:root {
+  --grid-size: 350px;
+}
+
 body {
   background-color: #85c4ff;
   font-family: "Salsa", cursive;
@@ -27,8 +31,8 @@ button {
 
 .container {
   display: grid;
-  width: 350px;
-  height: 350px;
+  width: var(--grid-size);
+  height: var(--grid-size);
   border: 1px solid grey;
   background-color: white;
 }
@@ -92,4 +96,27 @@ button {
 .startItems {
   padding-top: 10%;
   padding-left: 5%;
+}
+
+/*Media Queries for mobile view*/
+
+@media only screen and (min-width: 320px) and (max-width: 576px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  body {
+    --grid-size: 200px;
+  }
+
+  .roundButtons,
+  #startButton {
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 0.5rem;
+  }
+
+  #start {
+    font-size: 1rem;
+  }
 }

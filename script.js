@@ -1,5 +1,11 @@
-//Creating the grid
+//************ Global variables **********
+//This is to get the --grid-size css variable from the stylesheet.
+//Important! For the variable to be accessible in the media query, I had to put it in the "body" element. Not in the ::root
+let bodyStyles = window.getComputedStyle(document.body);
+let gridSize = bodyStyles.getPropertyValue("--grid-size").substring(0, 4);
+
 const container = document.getElementById("container");
+let squaresNumber;
 let fullGrid = false;
 let randomColor = false;
 let color = false;
@@ -7,6 +13,7 @@ let erase = false;
 let black = false;
 let colorPicked = "";
 
+//Creating the grid
 document.getElementById("startButton").addEventListener("click", () => {
   if (fullGrid == true) {
     deleteGrid();
@@ -17,11 +24,9 @@ document.getElementById("startButton").addEventListener("click", () => {
 });
 
 function createGrid() {
-  const squaresNumber = parseInt(
-    prompt("Please input a number of squares for the grid. Max 100.")
-  );
-  let rowColumSize = 350 / squaresNumber;
+  startGridValue();
 
+  let rowColumSize = gridSize / squaresNumber;
   for (let i = 1; i <= squaresNumber * squaresNumber; i++) {
     const square = document.createElement("div");
     square.classList = "gridItem";
@@ -29,6 +34,17 @@ function createGrid() {
   }
   container.style.gridTemplateColumns = `repeat(${squaresNumber},${rowColumSize}px)`;
   container.style.gridTemplateRows = `repeat(${squaresNumber},${rowColumSize}px)`;
+}
+
+//To validate a grid value less than 100.
+function startGridValue() {
+  squaresNumber = parseInt(
+    prompt("Please input a number of squares for the grid. Max 100.")
+  );
+  if (squaresNumber > 100) {
+    squaresNumber = 0;
+    alert("Please click Start again and input a number under 100.");
+  }
 }
 
 //To empty the grid before creating a new one.
@@ -66,17 +82,14 @@ document.querySelectorAll(".roundButtons").forEach((item) => {
       document.querySelectorAll(".gridItem").forEach((item) => {
         item.style.backgroundColor = "white";
       });
-      console.log(clearBoard);
     } else if (item.id == "black") {
       black = true;
       randomColor = false;
       erase = false;
-      console.log(black);
     } else if (item.id == "randomColor") {
       randomColor = true;
       black = false;
       erase = false;
-      console.log(randomColor);
     } else if (item.id == "color") {
       item.addEventListener("change", () => {
         color = true;
@@ -89,7 +102,6 @@ document.querySelectorAll(".roundButtons").forEach((item) => {
       erase = true;
       randomColor = false;
       black = false;
-      console.log(erase);
     }
   });
 });

@@ -20,15 +20,45 @@
     </div>
     <main>
       <div class="sideMenu">
-        <button class="roundButtons" id="clearBoard">Clear Board</button>
-        <button class="roundButtons" id="black">Black</button>
-        <input class="roundButtons" type="color" id="color" value="#e66465" />
-        <button class="roundButtons" id="randomColor">Random Color</button>
-        <button class="roundButtons" id="erase">Erase</button>
+        <button
+          class="roundButtons"
+          id="clearBoard"
+          title="Clears the board completely"
+        >
+          Clear Board
+        </button>
+        <button
+          class="roundButtons"
+          id="black"
+          title="Paints the squares black"
+        >
+          Black
+        </button>
+        <input
+          class="roundButtons"
+          type="color"
+          id="color"
+          value="#e66465"
+          title="Pick a Color"
+        />
+        <button
+          class="roundButtons"
+          id="randomColor"
+          title="Selects a random color for each square"
+        >
+          Random Color
+        </button>
+        <button
+          class="roundButtons"
+          id="erase"
+          title="Erases the color of the squares one by one"
+        >
+          Erase
+        </button>
       </div>
       <div class="container" id="container"></div>
       <div class="startItems">
-        <button id="startButton"></button>
+        <button id="startButton" title="Click to draw a grid"></button>
         <p id="start">Start</p>
       </div>
     </main>
