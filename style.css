@@ -89,7 +89,7 @@ button {
 }
 
 #startButton {
-  background-image: url(/Images/startbutton.png);
+  background-image: url(Images/startbutton.png);
   background-size: cover;
 }
 
