@@ -25,15 +25,13 @@ document.getElementById("startButton").addEventListener("click", () => {
 
 function createGrid() {
   startGridValue();
-
-  let rowColumSize = gridSize / squaresNumber;
   for (let i = 1; i <= squaresNumber * squaresNumber; i++) {
     const square = document.createElement("div");
     square.classList = "gridItem";
     container.appendChild(square);
   }
-  container.style.gridTemplateColumns = `repeat(${squaresNumber},${rowColumSize}px)`;
-  container.style.gridTemplateRows = `repeat(${squaresNumber},${rowColumSize}px)`;
+  container.style.gridTemplateColumns = `repeat(${squaresNumber}, 1fr)`;
+  container.style.gridTemplateRows = `repeat(${squaresNumber}, 1fr)`;
 }
 
 //To validate a grid value less than 100.
